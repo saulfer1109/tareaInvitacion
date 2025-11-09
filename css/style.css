@@ -22,6 +22,18 @@ body {
     line-height: 1.6;
     background-color: var(--color-fondo); 
     color: var(--color-acento); 
+
+    /* === NUEVOS ESTILOS PARA LA IMAGEN DE FONDO === */
+    background-image: url('/src/imagenes/pexels-kamizzle-86843569-9714048.jpg'); /* Ruta a tu imagen */
+    background-size: cover; /* Cubre toda el área del body */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+    /* Capa blanca semitransparente sobre la imagen de fondo */
+    /* Usamos un pseudo-elemento para la capa */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    z-index: 1; /* Asegura que el contenido esté por encima de la capa */
 }
 
 /* === CONTENEDORES === */
