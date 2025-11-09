@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Asistencia</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Anjelina & Jack</h1>
+        <p class="muted">¡Esperamos celebrar contigo!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="main.html">Inicio (Invitación)</a></li>
+            <li><a href="galeria.html">Programa y Galería</a></li>
+            <li><a href="contacto.html">Confirmar Asistencia</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="asistencia">
+            <h2 class="text-cursive">¿Nos Acompañas?</h2>
+            <div class="floral-divider"></div>
+            
+            <p class="muted" style="margin-bottom: 2rem;">
+                Favor de confirmar antes del 30 de noviembre.
+            </p>
+            
+            <form id="form-confirmacion">
+                <div>
+                    <label for="nombre">Tu Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Apellido" required>
+                </div>
+                
+                <div>
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <div>
+                    <label for="asistencia">Asistencia</label>
+                    <select id="asistencia" name="asistencia" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="si">¡Asistiré con gusto!</option>
+                        <option value="no">No podré asistir</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensaje">Mensaje Adicional</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Alguna nota o petición especial (opcional)"></textarea>
+                </div>
+                
+                <button type="submit" id="btn-enviar">
+                    Enviar Confirmación
+                </button>
+            </form>
+            
+            <p id="mensaje-dinamico" class="mt-4" style="color: var(--color-principal); font-weight: bold; display:none;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="current-year">2025</span> Invitación Digital Anjelina & Jack
+        </p>
+        <p class="muted">
+            Diseño por **Saul Espinoza** | Grupo 123 | Fecha de Creación: Noviembre 2025
+        </p>
+    </footer>
+
+    <script src="/js/javascript.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

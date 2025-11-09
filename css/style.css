@@ -1,0 +1,286 @@
+/* === PALETA DE COLORES Y FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&display=swap');
+
+:root {
+    --color-principal: #C9967D; /* Melocotón/Rosa suave (como el texto de las imágenes) */
+    --color-secundario: #E8D9C8; /* Beige/Blanco Roto para fondos */
+    --color-acento: #6F6F6F; /* Gris oscuro para texto principal */
+    --color-fondo: #FAFAFA; /* Fondo muy claro */
+    --fuente-titulo: 'Great Vibes', cursive; /* Fuente elegante y cursiva */
+    --fuente-texto: 'Playfair Display', serif; /* Fuente elegante para cuerpo de texto */
+}
+
+/* === RESET BÁSICO === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+    background-color: var(--color-fondo); 
+    color: var(--color-acento); 
+}
+
+/* === CONTENEDORES === */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+/* === HEADER (Sutil y elegante) === */
+header {
+    background-color: white; 
+    padding: 3rem 1rem; 
+    text-align: center; 
+    border-bottom: 1px solid var(--color-secundario);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal); 
+    font-size: 3.5rem; 
+    margin-bottom: 0.5rem; 
+    letter-spacing: 2px;
+}
+
+header .muted {
+    color: var(--color-acento); 
+    font-size: 1.2rem;
+}
+
+/* === NAV (Menú Superior) === */
+nav {
+    background-color: white;
+    padding: 0.5rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-secundario);
+    /* Mantenemos el sticky nav de tu clase para un toque moderno */
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem; 
+}
+
+nav a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: var(--color-principal); 
+    border-bottom: 2px solid var(--color-principal);
+}
+
+/* === SECCIONES PRINCIPALES (Tarjetas) === */
+section {
+    max-width: 900px; 
+    margin: 3rem auto; 
+    padding: 2rem; 
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    text-align: center;
+}
+
+section h2 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal); 
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem;
+}
+
+/* === BOTONES (Estilo suave y simple) === */
+button {
+    background-color: var(--color-principal); 
+    color: white;
+    border: none; 
+    padding: 0.8rem 2rem; 
+    font-size: 1.1rem;
+    border-radius: 5px; 
+    cursor: pointer; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #A97A62; /* Tono más oscuro al pasar el mouse */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* === SEPARADOR (Florales - Basado en la imagen) === */
+.floral-divider {
+    display: inline-block;
+    margin: 2rem 0;
+    width: 100%;
+    height: 50px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="%23C9967D">❧</text></svg>');
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+/* === MEDIA (Imágenes/Video) === */
+/* Contenedor adaptable para el video/imagen en bucle */
+.media-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.media-container iframe, .media-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* === EFECTO DE NOMBRES DE NOVIOS (JS + CSS) === */
+.nombre-novios {
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal);
+    font-size: 4rem;
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+
+.nombre-novios:hover {
+    color: #A97A62; /* Cambia de color al pasar el mouse */
+}
+
+/* El pseudo-elemento para el corazón que aparece */
+.nombre-novios::after {
+    content: '❤️'; 
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.5);
+    pointer-events: none; /* Asegura que el corazón no bloquee el hover */
+}
+
+.nombre-novios:hover::after {
+    opacity: 1;
+    transform: scale(1) rotate(-10deg);
+}
+
+/* === FORMULARIO (Basado en la imagen de Contacto) === */
+input, select, textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #E0E0E0; 
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    font-family: var(--fuente-texto);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--color-principal); 
+    box-shadow: 0 0 0 1px var(--color-principal);
+}
+
+/* === FOOTER (Créditos del equipo) === */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-secundario);
+    color: var(--color-acento);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-principal);
+}
+
+footer a {
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.text-cursive {
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal);
+    font-size: 2rem;
+}
+
+/* === GALERÍA (Similar al estilo de cards) === */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* === HORARIOS (Similar a las imágenes) === */
+.program-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.program-card {
+    flex-basis: 300px;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.program-card h3 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-principal);
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+.program-card p.time {
+    color: #A97A62;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
